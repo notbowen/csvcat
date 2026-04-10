@@ -1,0 +1,21 @@
+[package]
+name = "csvcat"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "csvcat"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+
+[dependencies]
+csv-parser = { package = "csv", version = "1" }
+crossterm = { version = "0.28", features = ["use-dev-tty"] }
+clap = { version = "4", features = ["derive"] }
+memmap2 = "0.9"
+unicode-width = "0.2"
+anyhow = "1"
