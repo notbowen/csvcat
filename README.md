@@ -7,5 +7,5 @@ coding workflow.
 
 ## Usage
 
-Clone this repository and run `cargo build --release` or `cargo install --path
-.`. Use an LLM to explain to you the detailed steps if needed.
+1. Ensure that [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) is installed and added to `PATH`.
+2. Run `cargo install csvcat`
