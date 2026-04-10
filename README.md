@@ -1,3 +1,5 @@
+![Crates.io Version](https://img.shields.io/crates/v/csvcat)
+
 # CSVCat
 
 A blazingly fast (vibe-coded) `batcat`-like tool for viewing CSV files in the
