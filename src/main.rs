@@ -27,16 +27,21 @@ struct Cli {
     /// Disable alternating row background colors
     #[arg(long = "no-zebra")]
     no_zebra: bool,
+
+    /// Disable sticky row-number column (on by default; toggle with # in viewer)
+    #[arg(long = "no-line-numbers")]
+    no_line_numbers: bool,
 }
 
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     let data = reader::load_csv(&cli.file, cli.delimiter as u8)?;
     let zebra = !cli.no_zebra;
+    let show_line_numbers = !cli.no_line_numbers;
 
     if cli.print {
-        viewer::print_table(&data, cli.max_col_width, zebra)
+        viewer::print_table(&data, cli.max_col_width, zebra, show_line_numbers)
     } else {
-        viewer::run_viewer(&data, cli.max_col_width, zebra)
+        viewer::run_viewer(&data, cli.max_col_width, zebra, show_line_numbers)
     }
 }
