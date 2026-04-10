@@ -1,7 +1,12 @@
 [package]
 name = "csvcat"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
+description = "Batcat for CSV files"
+license = "MIT"
+repository = "https://github.com/notbowen/csvcat"
+keywords = ["csv", "tui", "viewer", "terminal"]
+categories = ["command-line-utilities"]
 
 [[bin]]
 name = "csvcat"
